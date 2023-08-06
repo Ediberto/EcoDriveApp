@@ -75,15 +75,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            }
-         }
-    }
-  /*
-
-  OU ASSIM
-showMensage("Login realizado com sucesso!!!")
-  private fun showMensage(string: String) {
-       Toast.makeText(this,string, Toast.LENGTH_LONG).show()
+        }
     }
 }
-*/
