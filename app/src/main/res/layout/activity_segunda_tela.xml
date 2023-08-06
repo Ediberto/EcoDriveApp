@@ -31,6 +31,19 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <TextView
+        android:id="@+id/MsgEscolhaCombo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/purple_700"
+        android:textSize="18sp"
+        android:text="Qualo tipo de Combustível do seu veículo?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+    <TextView
         android:id="@+id/textprecoAlcool"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -136,16 +149,6 @@
         app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MsgEscolhaCombo" />
-
-    <TextView
-        android:id="@+id/MsgEscolhaCombo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Tipo de Combustível do seu veículo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <CheckBox
         android:id="@+id/idAlcoolcheckBox"

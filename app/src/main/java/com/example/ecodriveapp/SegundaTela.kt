@@ -28,7 +28,11 @@ class SegundaTela : AppCompatActivity() {
                 edtprecoAlcool.visibility = View.VISIBLE
                 txtprecoGasolina.visibility = View.VISIBLE
                 edtprecoGasolina.visibility = View.VISIBLE
+                flexBoxAlcool.visibility = View.INVISIBLE
+                flexBoxGasolina.visibility = View.INVISIBLE
             } else {
+                flexBoxAlcool.visibility = View.VISIBLE
+                flexBoxGasolina.visibility = View.VISIBLE
                 txtprecoAlcool.visibility = View.INVISIBLE
                 edtprecoAlcool.visibility = View.INVISIBLE
                 txtprecoGasolina.visibility = View.INVISIBLE
@@ -39,18 +43,30 @@ class SegundaTela : AppCompatActivity() {
             if (isChecked) {
                 txtprecoAlcool.visibility = View.VISIBLE
                 edtprecoAlcool.visibility = View.VISIBLE
+                flexBox.visibility = View.INVISIBLE
+                flexBoxGasolina.visibility = View.INVISIBLE
+                txtResultado.text = "Seu veículo só usa Àlcool"
             } else {
                 txtprecoAlcool.visibility = View.INVISIBLE
                 edtprecoAlcool.visibility = View.INVISIBLE
+                flexBox.visibility = View.VISIBLE
+                flexBoxGasolina.visibility = View.VISIBLE
+                txtResultado.text = ""
             }
         }
         flexBoxGasolina.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 txtprecoGasolina.visibility = View.VISIBLE
                 edtprecoGasolina.visibility = View.VISIBLE
+                flexBoxAlcool.visibility = View.INVISIBLE
+                flexBox.visibility = View.INVISIBLE
+                txtResultado.text = "Seu veículo só usa Gasolina"
             } else {
                 txtprecoGasolina.visibility = View.INVISIBLE
                 edtprecoGasolina.visibility = View.INVISIBLE
+                flexBoxAlcool.visibility = View.VISIBLE
+                flexBox.visibility = View.VISIBLE
+                txtResultado.text = ""
             }
         }
         //AÇÃO DO BOTAO
