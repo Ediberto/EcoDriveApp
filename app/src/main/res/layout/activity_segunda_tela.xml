@@ -21,6 +21,7 @@
         android:id="@+id/imageView4"
         android:layout_width="45dp"
         android:layout_height="45dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="205dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -30,6 +31,7 @@
         android:id="@+id/imageView5"
         android:layout_width="45dp"
         android:layout_height="45dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="250dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -39,6 +41,7 @@
         android:id="@+id/imageView3"
         android:layout_width="45dp"
         android:layout_height="45dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="300dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -69,6 +72,47 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+    <CheckBox
+        android:id="@+id/idFlexCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Flex"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MsgEscolhaCombo" />
+
+    <CheckBox
+        android:id="@+id/idGasolinacheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:text="Gasolina"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idFlexCheckBox" />
+
+    <CheckBox
+        android:id="@+id/idOutroscheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:text="Outros"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idGasolinacheckBox" />
 
     <TextView
         android:id="@+id/textprecoAlcool"
@@ -157,131 +201,116 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textprecoOutros" />
-    <Button
-        android:id="@+id/btnCalcular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Calcular"
+
+    <EditText
+        android:id="@+id/edittextdistancia"
+        android:layout_width="93dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:maxLength="5"
+        android:visibility="invisible"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/txtDistancia"
+        app:layout_constraintTop_toBottomOf="@+id/etPrecoGasolina" />
+
+    <TextView
+        android:id="@+id/txtDistancia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:text="Distância a percorrer em km"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvResultado" />
+        app:layout_constraintTop_toBottomOf="@+id/etPrecoGasolina" />
+
+    <TextView
+        android:id="@+id/textViewQtdeLitros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Qtde de litros comprados"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/edttextlitros"
+        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDistancia" />
+
+    <EditText
+        android:id="@+id/edttextlitros"
+        android:layout_width="93dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:visibility="invisible"
+        android:inputType="numberDecimal"
+        android:maxLength="5"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edittextdistancia" />
+
+    <TextView
+        android:id="@+id/txtConsumoCombustivel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="CONSUMO DE COMBUSTÍVEL"
+        android:textAlignment="center"
+        android:textColor="@color/yellow"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edttextlitros" />
+
+    <TextView
+        android:id="@+id/txtMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Consumo do veículo"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtConsumoCombustivel" />
 
     <TextView
         android:id="@+id/tvResultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Resultado"
+        android:layout_marginTop="16dp"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPrecoGasolina" />
-
-    <CheckBox
-        android:id="@+id/idFlexCheckBox"
-        android:layout_width="168dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="30dp"
-        android:text="Flex"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.186"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MsgEscolhaCombo" />
-
-    <CheckBox
-        android:id="@+id/idOutroscheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:text="Outros"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.138"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idGasolinacheckBox"    />
-
-    <CheckBox
-        android:id="@+id/idGasolinacheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="0dp"
-        android:text="Gasolina"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idFlexCheckBox"  />
-
-    <TextView
-        android:id="@+id/txtMsg"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:text="Resultado"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:layout_marginTop="200dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvResultado" />
-
-    <EditText
-        android:id="@+id/edittextdistancia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:hint="Distância.Ex: 100km"
-        android:inputType="numberDecimal"
-        android:maxLength="5"
-        android:layout_marginTop="50dp"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCalcular" />
-
-    <EditText
-        android:id="@+id/edttextlitros"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:hint="Litros Utilizados.Ex: 8L"
-        android:inputType="numberDecimal"
-        android:maxLength="5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCalcular" />
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:text="CONSUMO DE COMBUSTÍVEL"
-        android:textStyle="bold"
-        android:textColor="@color/yellow"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:layout_marginTop="70dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvResultado" />
+        app:layout_constraintTop_toBottomOf="@+id/txtMsg"
+        tools:text="Resultado" />
 
     <Button
-        android:id="@+id/btnCalcular_consumo"
+        android:id="@+id/btnCalcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:text="Consumo"
+        android:layout_marginTop="20dp"
+        android:text="Calcular"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCalcular" />
-
+        app:layout_constraintTop_toBottomOf="@+id/tvResultado" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
