@@ -9,26 +9,180 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="79dp"
-        android:layout_height="78dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/img" />
+        app:srcCompat="@drawable/ecodrivelogo" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/idMsgResultPesquisa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
         android:text="RESULTADO DA PESQUISA"
-        android:textSize="22sp"
         android:textColor="@color/purple_700"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.044" />
+        app:layout_constraintVertical_bias="0.029" />
+
+    <TextView
+        android:id="@+id/msgCombConsumido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:text="Combustível consumido (Litros)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idMsgResultPesquisa" />
+
+    <TextView
+        android:id="@+id/exibeCombustivelConsumido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="@color/white"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.693"
+        app:layout_constraintStart_toEndOf="@+id/msgCombConsumido"
+        app:layout_constraintTop_toBottomOf="@+id/idMsgResultPesquisa" />
+
+    <TextView
+        android:id="@+id/msgDistanciaPercorrida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:text="Distância Percorrida em quilômetros"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msgCombConsumido" />
+
+    <TextView
+        android:id="@+id/exibeDistanciaPercorrida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@color/white"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintStart_toEndOf="@+id/msgDistanciaPercorrida"
+        app:layout_constraintTop_toBottomOf="@+id/exibeCombustivelConsumido" />
+
+    <TextView
+        android:id="@+id/msgPrecoCombustivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="56dp"
+        android:text="PrecodoCombustivel por litro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msgDistanciaPercorrida" />
+
+    <TextView
+        android:id="@+id/exibePrecoCombustivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:background="@color/white"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.698"
+        app:layout_constraintStart_toEndOf="@+id/msgPrecoCombustivel"
+        app:layout_constraintTop_toBottomOf="@+id/exibeDistanciaPercorrida" />
+
+    <Button
+        android:id="@+id/btnVoltarResultados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/msgEficienciaCombustivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Eficiência do Combustível"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exibePrecoCombustivel" />
+
+    <TextView
+        android:id="@+id/msgLitrosporkm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="96dp"
+        android:text="Litros por km"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msgEficienciaCombustivel" />
+
+    <TextView
+        android:id="@+id/exibeLitrosporkm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@color/white"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/msgLitrosporkm"
+        app:layout_constraintHorizontal_bias="0.729"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msgEficienciaCombustivel" />
+
+    <TextView
+        android:id="@+id/msgKmporlitro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Quilômetros por litro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toEndOf="@+id/exibekmporlitro"
+        app:layout_constraintTop_toBottomOf="@+id/msgLitrosporkm" />
+
+    <TextView
+        android:id="@+id/msgCustoCombustivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="40dp"
+        android:text="Custo do Combustível"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exibekmporlitro" />
+
+    <TextView
+        android:id="@+id/exibeCustoCombustivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@color/white"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toEndOf="@+id/msgCustoCombustivel"
+        app:layout_constraintTop_toBottomOf="@+id/msgKmporlitro" />
+
+    <TextView
+        android:id="@+id/exibekmporlitro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exibeLitrosporkm" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

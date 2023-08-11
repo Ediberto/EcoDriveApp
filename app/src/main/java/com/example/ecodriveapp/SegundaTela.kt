@@ -1,11 +1,11 @@
 package com.example.ecodriveapp
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.view.MenuItem
 import android.view.View
 import android.widget.*
-import androidx.appcompat.widget.Toolbar
+import androidx.appcompat.app.AppCompatActivity
+
 
 class SegundaTela : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +19,8 @@ class SegundaTela : AppCompatActivity() {
         val edtLitros = findViewById<EditText>(R.id.edttextlitros)
         val txtResultado = findViewById<TextView>(R.id.tvResultado)
         val msgkml = findViewById<TextView>(R.id.txtMsg)
-
+        var btnResultado = findViewById<Button>(R.id.btnResultado)
+        btnResultado.visibility=View.INVISIBLE
         val txtConsumo = findViewById<TextView>(R.id.txtMsg)
 
         val btnCalcular = findViewById<Button>(R.id.btnCalcular)
@@ -142,6 +143,8 @@ class SegundaTela : AppCompatActivity() {
                 txtResultado.text = ""
             }
         }
+        //var btnResultado = findViewById<Button>(R.id.btnResultado)
+
         //AÇÃO DO BOTAO
         btnCalcular.setOnClickListener {
              if (flexBox.isChecked) {
@@ -245,9 +248,18 @@ class SegundaTela : AppCompatActivity() {
                         msgkml.visibility = View.VISIBLE
                     }
                 }
-            }
 
+            }
+        btnResultado.visibility = View.VISIBLE
         }
+        val btnresultado = findViewById<Button>(R.id.btnResultado)// as Button
+        //val n = findViewById<View>(R.id.txtNome) as EditText
+        btnresultado.setOnClickListener {
+            //INTENT EXPLICITA
+            val intent = Intent(this, TelaResultados::class.java)
+            startActivity(intent)
+        }
+
 
     }
 
