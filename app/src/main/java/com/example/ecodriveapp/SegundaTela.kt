@@ -51,6 +51,8 @@ class SegundaTela : AppCompatActivity() {
             if (isChecked) {
                 txtprecoAlcool.visibility = View.VISIBLE
                 edtprecoAlcool.visibility = View.VISIBLE
+                edtprecoAlcool.requestFocus()
+
                 txtprecoGasolina.visibility = View.VISIBLE
                 edtprecoGasolina.visibility = View.VISIBLE
                 edtDistancia.visibility = View.VISIBLE
@@ -65,6 +67,7 @@ class SegundaTela : AppCompatActivity() {
                 txtResultado.text=""
                 txtConsumo.text=""
                 msgkml.text=""
+
             } else {
                 flexBoxOutros.visibility = View.VISIBLE
                 flexBoxGasolina.visibility = View.VISIBLE
@@ -96,6 +99,7 @@ class SegundaTela : AppCompatActivity() {
                 edtLitros.setText("")
                 txtConsumo.text=""
                 msgkml.text=""
+
             } else {
                 flexBoxOutros.visibility = View.VISIBLE
                 flexBox.visibility = View.VISIBLE
@@ -138,10 +142,118 @@ class SegundaTela : AppCompatActivity() {
                 txtResultado.text = ""
             }
         }
-
         //AÇÃO DO BOTAO
         btnCalcular.setOnClickListener {
-           if(flexBox.isChecked) {
+             if (flexBox.isChecked) {
+                   if (edtprecoAlcool.text.toString().isEmpty()) {
+                       Toast.makeText(
+                           this,
+                           "Favor informar o valor do Álcool!!!",
+                           Toast.LENGTH_LONG
+                       ).show()
+                       edtprecoAlcool.requestFocus()
+                   } else {
+                       if (edtprecoGasolina.text.toString().isEmpty()) {
+                           Toast.makeText(
+                               this,
+                               "Favor informar o valor da Gasolina!!!",
+                               Toast.LENGTH_LONG
+                           ).show()
+                           edtprecoGasolina.requestFocus()
+                       } else {
+                           val valorAlcool: Float = edtprecoAlcool.text.toString().toFloat()
+                           val valorGasolina: Float = edtprecoGasolina.text.toString().toFloat()
+                           val resultadoFinal: Float = valorAlcool / valorGasolina
+                           txtResultado.text = "Resultado: $resultadoFinal"
+                           if (resultadoFinal <= 0.7) {
+                               txtResultado.setText("É melhor você usar o Alcool")
+                           } else {
+                               txtResultado.setText("É melhor você usar a Gasolina")
+                           }
+                           if (edtDistancia.text.toString().isEmpty()) {
+                               Toast.makeText(
+                                   this,
+                                   "Favor informar a distância percorrida!!!",
+                                   Toast.LENGTH_LONG
+                               ).show()
+                               edtDistancia.requestFocus()
+                           } else {
+                               val distancia: Float = edtDistancia.text.toString().toFloat()
+                               if (edtLitros.text.toString().isEmpty()) {
+                                   Toast.makeText(
+                                       this,
+                                       "Favor informar a qtde de litros utilizados!!!",
+                                       Toast.LENGTH_LONG
+                                   ).show()
+                                   edtLitros.requestFocus()
+                               } else {
+                                   val litros: Float = edtLitros.text.toString().toFloat()
+                                   val result: Float = (distancia / litros)
+                                   txtConsumo.text = result.toString()
+                                   msgkml.visibility = View.VISIBLE
+                               }
+                           }
+                       }
+                   }
+            }
+            if(flexBoxGasolina.isChecked) {
+                if (edtDistancia.text.toString().isEmpty()) {
+                    Toast.makeText(
+                        this,
+                        "Favor informar a distância percorrida!!!",
+                        Toast.LENGTH_LONG
+                    ).show()
+                    edtDistancia.requestFocus()
+                } else {
+                    val distancia: Float = edtDistancia.text.toString().toFloat()
+                    if (edtLitros.text.toString().isEmpty()) {
+                        Toast.makeText(
+                            this,
+                            "Favor informar a qtde de litros utilizados!!!",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        edtLitros.requestFocus()
+                    } else {
+                        val litros: Float = edtLitros.text.toString().toFloat()
+                        val result: Float = (distancia / litros)
+                        txtConsumo.text = result.toString()
+                        msgkml.visibility = View.VISIBLE
+                    }
+                }
+           }
+            if(flexBoxOutros.isChecked) {
+                if (edtDistancia.text.toString().isEmpty()) {
+                    Toast.makeText(
+                        this,
+                        "Favor informar a distância percorrida!!!",
+                        Toast.LENGTH_LONG
+                    ).show()
+                    edtDistancia.requestFocus()
+                } else {
+                    val distancia: Float = edtDistancia.text.toString().toFloat()
+                    if (edtLitros.text.toString().isEmpty()) {
+                        Toast.makeText(
+                            this,
+                            "Favor informar a qtde de litros utilizados!!!",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        edtLitros.requestFocus()
+                    } else {
+                        val litros: Float = edtLitros.text.toString().toFloat()
+                        val result: Float = (distancia / litros)
+                        txtConsumo.text = result.toString()
+                        msgkml.visibility = View.VISIBLE
+                    }
+                }
+            }
+
+        }
+
+    }
+
+}
+/*
+if(flexBox.isChecked) {
                 val valorAlcool: Float = edtprecoAlcool.text.toString().toFloat()
                 val valorGasolina: Float = edtprecoGasolina.text.toString().toFloat()
                 val resultadoFinal: Float = valorAlcool / valorGasolina
@@ -157,22 +269,38 @@ class SegundaTela : AppCompatActivity() {
                 txtConsumo.text = result.toString()
                 msgkml.visibility = View.VISIBLE
            }
-           if(flexBoxGasolina.isChecked) {
-              val distancia: Float = edtDistancia.text.toString().toFloat()
-                val litros: Float = edtLitros.text.toString().toFloat()
-                val result: Float = (distancia / litros)
-                txtConsumo.text = result.toString()
-                msgkml.visibility = View.VISIBLE
+ */
+/*
+if (edtprecoAlcool.text.toString().isEmpty()) {
+                   Toast.makeText(this, "Favor informar o valor do Álcool!!!", Toast.LENGTH_LONG).show()
+                   edtprecoAlcool.requestFocus()
+               }
+ */
+//FUNCIONANDO PARA ALCOOL
+/*if (flexBox.isChecked) {
+                   if (edtprecoAlcool.text.toString().isEmpty()) {
+                       Toast.makeText(
+                           this,
+                           "Favor informar o valor do Álcool!!!",
+                           Toast.LENGTH_LONG
+                       ).show()
+                       edtprecoAlcool.requestFocus()
+                   } else {
+                       val valorAlcool: Float = edtprecoAlcool.text.toString().toFloat()
+                       val valorGasolina: Float = edtprecoGasolina.text.toString().toFloat()
+                       val resultadoFinal: Float = valorAlcool / valorGasolina
+                       txtResultado.text = "Resultado: $resultadoFinal"
+                       if (resultadoFinal <= 0.7) {
+                           txtResultado.setText("É melhor você usar o Alcool")
+                       } else {
+                           txtResultado.setText("É melhor você usar a Gasolina")
+                       }
+                       val distancia: Float = edtDistancia.text.toString().toFloat()
+                       val litros: Float = edtLitros.text.toString().toFloat()
+                       val result: Float = (distancia / litros)
+                       txtConsumo.text = result.toString()
+                       msgkml.visibility = View.VISIBLE
+                   }
            }
-            if(flexBoxOutros.isChecked) {
-                val distancia: Float = edtDistancia.text.toString().toFloat()
-                val litros: Float = edtLitros.text.toString().toFloat()
-                val result: Float = (distancia / litros)
-                txtConsumo.text = result.toString()
-                msgkml.visibility = View.VISIBLE
-            }
-        }
 
-    }
-
-}
+ */
