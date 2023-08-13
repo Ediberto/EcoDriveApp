@@ -29,9 +29,12 @@ class SegundaTela : AppCompatActivity() {
         val txtprecoAlcool = findViewById<TextView>(R.id.textprecoAlcool)
         val txtprecoGasolina = findViewById<TextView>(R.id.textprecoGasolina)
         val txtprecoOutros = findViewById<TextView>(R.id.textprecoOutros)
+        btnCalcular.visibility = View.INVISIBLE
         //Definição do OUVINTE PARA O CheckBox
         flexBox.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
+                btnResultado.visibility = View.INVISIBLE
+                btnCalcular.visibility = View.VISIBLE
                 txtprecoAlcool.visibility = View.VISIBLE
                 edtprecoAlcool.visibility = View.VISIBLE
                 edtprecoAlcool.requestFocus()
@@ -49,7 +52,6 @@ class SegundaTela : AppCompatActivity() {
                 txtResultado.text=""
                 txtConsumo.text=""
                 msgkml.text=""
-
             } else {
                 flexBoxOutros.visibility = View.VISIBLE
                 flexBoxGasolina.visibility = View.VISIBLE
@@ -66,6 +68,8 @@ class SegundaTela : AppCompatActivity() {
         }
         flexBoxGasolina.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
+                btnResultado.visibility = View.INVISIBLE
+                btnCalcular.visibility = View.VISIBLE
                 txtprecoGasolina.visibility = View.VISIBLE
                 edtprecoGasolina.visibility = View.VISIBLE
                 edtDistancia.visibility = View.VISIBLE
@@ -81,7 +85,6 @@ class SegundaTela : AppCompatActivity() {
                 edtLitros.setText("")
                 txtConsumo.text=""
                 msgkml.text=""
-
             } else {
                 flexBoxOutros.visibility = View.VISIBLE
                 flexBox.visibility = View.VISIBLE
@@ -98,6 +101,8 @@ class SegundaTela : AppCompatActivity() {
         }
         flexBoxOutros.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
+                btnResultado.visibility = View.INVISIBLE
+                btnCalcular.visibility = View.VISIBLE
                 txtprecoOutros.visibility = View.VISIBLE
                 edtprecoOutros.visibility = View.VISIBLE
                 edtDistancia.visibility = View.VISIBLE
@@ -134,6 +139,8 @@ class SegundaTela : AppCompatActivity() {
                            Toast.LENGTH_LONG
                        ).show()
                        edtprecoAlcool.requestFocus()
+                       btnResultado.visibility = View.INVISIBLE
+                       btnCalcular.visibility = View.VISIBLE
                    } else {
                        if (edtprecoGasolina.text.toString().isEmpty()) {
                            Toast.makeText(
@@ -174,6 +181,8 @@ class SegundaTela : AppCompatActivity() {
                                    val formattedResult = String.format("%.3f", result) // Formata o resultado com duas casas decimais
                                    txtConsumo.text = formattedResult
                                    msgkml.visibility = View.VISIBLE
+                                   btnResultado.visibility = View.VISIBLE
+                                   btnCalcular.visibility = View.INVISIBLE
                                }
                            }
                        }
@@ -187,6 +196,8 @@ class SegundaTela : AppCompatActivity() {
                         Toast.LENGTH_LONG
                     ).show()
                     edtprecoGasolina.requestFocus()
+                    btnResultado.visibility = View.INVISIBLE
+                    btnCalcular.visibility = View.VISIBLE
                 } else {
                     if (edtDistancia.text.toString().isEmpty()) {
                         Toast.makeText(
@@ -210,6 +221,8 @@ class SegundaTela : AppCompatActivity() {
                             val formattedResult = String.format("%.3f", result) // Formata o resultado com duas casas decimais
                             txtConsumo.text = formattedResult
                             msgkml.visibility = View.VISIBLE
+                            btnResultado.visibility = View.VISIBLE
+                            btnCalcular.visibility = View.INVISIBLE
                         }
                     }
                 }
@@ -222,6 +235,8 @@ class SegundaTela : AppCompatActivity() {
                         Toast.LENGTH_LONG
                     ).show()
                     edtprecoOutros.requestFocus()
+                    btnResultado.visibility = View.INVISIBLE
+                    btnCalcular.visibility = View.VISIBLE
                 } else {
                     if (edtDistancia.text.toString().isEmpty()) {
                         Toast.makeText(
@@ -245,11 +260,14 @@ class SegundaTela : AppCompatActivity() {
                             val formattedResult = String.format("%.3f", result) // Formata o resultado com duas casas decimais
                             txtConsumo.text = formattedResult
                             msgkml.visibility = View.VISIBLE
+                            btnResultado.visibility = View.VISIBLE
+                            btnCalcular.visibility = View.INVISIBLE
                         }
                     }
                 }
             }
-        btnResultado.visibility = View.VISIBLE
+        //btnResultado.visibility = View.VISIBLE
+        //btnCalcular.visibility = View.INVISIBLE
         }
         val btnresultado = findViewById<Button>(R.id.btnResultado)// as Button
         btnresultado.setOnClickListener {
