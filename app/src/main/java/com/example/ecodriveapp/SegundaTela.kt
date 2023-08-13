@@ -22,7 +22,6 @@ class SegundaTela : AppCompatActivity() {
         var btnResultado = findViewById<Button>(R.id.btnResultado)
         btnResultado.visibility=View.INVISIBLE
         val txtConsumo = findViewById<TextView>(R.id.txtMsg)
-
         val btnCalcular = findViewById<Button>(R.id.btnCalcular)
         val flexBox = findViewById<CheckBox>(R.id.idFlexCheckBox)
         val flexBoxGasolina = findViewById<CheckBox>(R.id.idGasolinacheckBox)
@@ -30,30 +29,12 @@ class SegundaTela : AppCompatActivity() {
         val txtprecoAlcool = findViewById<TextView>(R.id.textprecoAlcool)
         val txtprecoGasolina = findViewById<TextView>(R.id.textprecoGasolina)
         val txtprecoOutros = findViewById<TextView>(R.id.textprecoOutros)
-
-        /*
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        toolbar.setOnMenuItemClickListener { menuItem ->
-            if (menuItem.itemId == android.R.id.home) {
-                onBackPressed()
-                true
-            } else {
-                false
-            }
-        }  */
-
-
         //Definição do OUVINTE PARA O CheckBox
         flexBox.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 txtprecoAlcool.visibility = View.VISIBLE
                 edtprecoAlcool.visibility = View.VISIBLE
                 edtprecoAlcool.requestFocus()
-
                 txtprecoGasolina.visibility = View.VISIBLE
                 edtprecoGasolina.visibility = View.VISIBLE
                 edtDistancia.visibility = View.VISIBLE
@@ -143,8 +124,6 @@ class SegundaTela : AppCompatActivity() {
                 txtResultado.text = ""
             }
         }
-        //var btnResultado = findViewById<Button>(R.id.btnResultado)
-
         //AÇÃO DO BOTAO
         btnCalcular.setOnClickListener {
              if (flexBox.isChecked) {
@@ -253,66 +232,25 @@ class SegundaTela : AppCompatActivity() {
         btnResultado.visibility = View.VISIBLE
         }
         val btnresultado = findViewById<Button>(R.id.btnResultado)// as Button
-        //val n = findViewById<View>(R.id.txtNome) as EditText
         btnresultado.setOnClickListener {
+            var valorcombTelaResult: Float
+            val precoAlcool = edtprecoAlcool.text.toString().toFloat()
+            val precoGasolina = edtprecoGasolina.text.toString().toFloat()
+            if(precoAlcool > precoGasolina) {
+                valorcombTelaResult = precoAlcool
+            } else {
+                valorcombTelaResult = precoGasolina
+            }
             //INTENT EXPLICITA
             val intent = Intent(this, TelaResultados::class.java)
+            //PASSAGEM DOS VALORES DA SEGUNDA TELA PARA A TELARESULTADOS
+            val valoredtTextlitros = edtLitros.text.toString()
+            val valoredtTextdistancia = edtDistancia.text.toString()
+            intent.putExtra("parametro1", valoredtTextlitros )
+            intent.putExtra("parametro2", valoredtTextdistancia)
+            intent.putExtra("parametro3", valorcombTelaResult)
             startActivity(intent)
         }
 
-
     }
-
 }
-/*
-if(flexBox.isChecked) {
-                val valorAlcool: Float = edtprecoAlcool.text.toString().toFloat()
-                val valorGasolina: Float = edtprecoGasolina.text.toString().toFloat()
-                val resultadoFinal: Float = valorAlcool / valorGasolina
-                txtResultado.text = "Resultado: $resultadoFinal"
-                if (resultadoFinal <= 0.7) {
-                    txtResultado.setText("É melhor você usar o Alcool")
-                } else {
-                    txtResultado.setText("É melhor você usar a Gasolina")
-                }
-                val distancia: Float = edtDistancia.text.toString().toFloat()
-                val litros: Float = edtLitros.text.toString().toFloat()
-                val result: Float = (distancia / litros)
-                txtConsumo.text = result.toString()
-                msgkml.visibility = View.VISIBLE
-           }
- */
-/*
-if (edtprecoAlcool.text.toString().isEmpty()) {
-                   Toast.makeText(this, "Favor informar o valor do Álcool!!!", Toast.LENGTH_LONG).show()
-                   edtprecoAlcool.requestFocus()
-               }
- */
-//FUNCIONANDO PARA ALCOOL
-/*if (flexBox.isChecked) {
-                   if (edtprecoAlcool.text.toString().isEmpty()) {
-                       Toast.makeText(
-                           this,
-                           "Favor informar o valor do Álcool!!!",
-                           Toast.LENGTH_LONG
-                       ).show()
-                       edtprecoAlcool.requestFocus()
-                   } else {
-                       val valorAlcool: Float = edtprecoAlcool.text.toString().toFloat()
-                       val valorGasolina: Float = edtprecoGasolina.text.toString().toFloat()
-                       val resultadoFinal: Float = valorAlcool / valorGasolina
-                       txtResultado.text = "Resultado: $resultadoFinal"
-                       if (resultadoFinal <= 0.7) {
-                           txtResultado.setText("É melhor você usar o Alcool")
-                       } else {
-                           txtResultado.setText("É melhor você usar a Gasolina")
-                       }
-                       val distancia: Float = edtDistancia.text.toString().toFloat()
-                       val litros: Float = edtLitros.text.toString().toFloat()
-                       val result: Float = (distancia / litros)
-                       txtConsumo.text = result.toString()
-                       msgkml.visibility = View.VISIBLE
-                   }
-           }
-
- */
