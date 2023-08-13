@@ -171,7 +171,8 @@ class SegundaTela : AppCompatActivity() {
                                } else {
                                    val litros: Float = edtLitros.text.toString().toFloat()
                                    val result: Float = (distancia / litros)
-                                   txtConsumo.text = result.toString()
+                                   val formattedResult = String.format("%.3f", result) // Formata o resultado com duas casas decimais
+                                   txtConsumo.text = formattedResult
                                    msgkml.visibility = View.VISIBLE
                                }
                            }
@@ -206,7 +207,8 @@ class SegundaTela : AppCompatActivity() {
                         } else {
                             val litros: Float = edtLitros.text.toString().toFloat()
                             val result: Float = (distancia / litros)
-                            txtConsumo.text = result.toString()
+                            val formattedResult = String.format("%.3f", result) // Formata o resultado com duas casas decimais
+                            txtConsumo.text = formattedResult
                             msgkml.visibility = View.VISIBLE
                         }
                     }
@@ -240,7 +242,8 @@ class SegundaTela : AppCompatActivity() {
                         } else {
                             val litros: Float = edtLitros.text.toString().toFloat()
                             val result: Float = (distancia / litros)
-                            txtConsumo.text = result.toString()
+                            val formattedResult = String.format("%.3f", result) // Formata o resultado com duas casas decimais
+                            txtConsumo.text = formattedResult
                             msgkml.visibility = View.VISIBLE
                         }
                     }
@@ -297,42 +300,6 @@ class SegundaTela : AppCompatActivity() {
                 intent.putExtra("parametro3", valorcombTelaResult)
                 startActivity(intent)
             }
-           /* INTENT EXPLICITA
-            val intent = Intent(this, TelaResultados::class.java)
-            //PASSAGEM DOS VALORES DA SEGUNDA TELA PARA A TELARESULTADOS
-            val valoredtTextlitros = edtLitros.text.toString()
-            val valoredtTextdistancia = edtDistancia.text.toString()
-            intent.putExtra("parametro1", valoredtTextlitros )
-            intent.putExtra("parametro2", valoredtTextdistancia)
-            //intent.putExtra("parametro3", valorcombTelaResult)
-            startActivity(intent) */
         }
     }
 }
- /*
- if(flexBoxGasolina.isChecked) {
-                if (edtDistancia.text.toString().isEmpty()) {
-                    Toast.makeText(
-                        this,
-                        "Favor informar a distância percorrida!!!",
-                        Toast.LENGTH_LONG
-                    ).show()
-                    edtDistancia.requestFocus()
-                } else {
-                    val distancia: Float = edtDistancia.text.toString().toFloat()
-                    if (edtLitros.text.toString().isEmpty()) {
-                        Toast.makeText(
-                            this,
-                            "Favor informar a qtde de litros utilizados!!!",
-                            Toast.LENGTH_LONG
-                        ).show()
-                        edtLitros.requestFocus()
-                    } else {
-                        val litros: Float = edtLitros.text.toString().toFloat()
-                        val result: Float = (distancia / litros)
-                        txtConsumo.text = result.toString()
-                        msgkml.visibility = View.VISIBLE
-                    }
-                }
-           }
-  */
