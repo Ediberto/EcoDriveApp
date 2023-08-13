@@ -179,6 +179,138 @@ class SegundaTela : AppCompatActivity() {
                    }
             }
             if(flexBoxGasolina.isChecked) {
+                if (edtprecoGasolina.text.toString().isEmpty()) {
+                    Toast.makeText(
+                        this,
+                        "Favor informar o valor da Gasolina!!!",
+                        Toast.LENGTH_LONG
+                    ).show()
+                    edtprecoGasolina.requestFocus()
+                } else {
+                    if (edtDistancia.text.toString().isEmpty()) {
+                        Toast.makeText(
+                            this,
+                            "Favor informar a distância percorrida!!!",
+                             Toast.LENGTH_LONG
+                        ).show()
+                        edtDistancia.requestFocus()
+                    } else {
+                        val distancia: Float = edtDistancia.text.toString().toFloat()
+                        if (edtLitros.text.toString().isEmpty()) {
+                            Toast.makeText(
+                                this,
+                                "Favor informar a qtde de litros utilizados!!!",
+                                Toast.LENGTH_LONG
+                            ).show()
+                            edtLitros.requestFocus()
+                        } else {
+                            val litros: Float = edtLitros.text.toString().toFloat()
+                            val result: Float = (distancia / litros)
+                            txtConsumo.text = result.toString()
+                            msgkml.visibility = View.VISIBLE
+                        }
+                    }
+                }
+           }
+            if(flexBoxOutros.isChecked) {
+                if (edtprecoOutros.text.toString().isEmpty()) {
+                    Toast.makeText(
+                        this,
+                        "Favor informar o valor do Combustível!!!",
+                        Toast.LENGTH_LONG
+                    ).show()
+                    edtprecoOutros.requestFocus()
+                } else {
+                    if (edtDistancia.text.toString().isEmpty()) {
+                        Toast.makeText(
+                            this,
+                            "Favor informar a distância percorrida!!!",
+                             Toast.LENGTH_LONG
+                        ).show()
+                        edtDistancia.requestFocus()
+                    } else {
+                        val distancia: Float = edtDistancia.text.toString().toFloat()
+                        if (edtLitros.text.toString().isEmpty()) {
+                            Toast.makeText(
+                                this,
+                                "Favor informar a qtde de litros utilizados!!!",
+                                Toast.LENGTH_LONG
+                            ).show()
+                            edtLitros.requestFocus()
+                        } else {
+                            val litros: Float = edtLitros.text.toString().toFloat()
+                            val result: Float = (distancia / litros)
+                            txtConsumo.text = result.toString()
+                            msgkml.visibility = View.VISIBLE
+                        }
+                    }
+                }
+            }
+        btnResultado.visibility = View.VISIBLE
+        }
+        val btnresultado = findViewById<Button>(R.id.btnResultado)// as Button
+        btnresultado.setOnClickListener {
+            if (flexBox.isChecked) {
+                var valorcombTelaResult: Float
+                val precoAlcool = edtprecoAlcool.text.toString().toFloat()
+                val precoGasolina = edtprecoGasolina.text.toString().toFloat()
+                if (precoAlcool > precoGasolina) {
+                    valorcombTelaResult = precoAlcool
+                } else {
+                    valorcombTelaResult = precoGasolina
+                }
+                //INTENT EXPLICITA
+                val intent = Intent(this, TelaResultados::class.java)
+                //PASSAGEM DOS VALORES DA SEGUNDA TELA PARA A TELARESULTADOS
+                val valoredtTextlitros = edtLitros.text.toString()
+                val valoredtTextdistancia = edtDistancia.text.toString()
+                intent.putExtra("parametro1", valoredtTextlitros )
+                intent.putExtra("parametro2", valoredtTextdistancia)
+                intent.putExtra("parametro3", valorcombTelaResult)
+                startActivity(intent)
+            }
+            if(flexBoxGasolina.isChecked) {
+                var valorcombTelaResult: Float
+                val precoGasolina = edtprecoGasolina.text.toString().toFloat()
+                valorcombTelaResult = precoGasolina
+                //INTENT EXPLICITA
+                val intent = Intent(this, TelaResultados::class.java)
+                //PASSAGEM DOS VALORES DA SEGUNDA TELA PARA A TELARESULTADOS
+                val valoredtTextlitros = edtLitros.text.toString()
+                val valoredtTextdistancia = edtDistancia.text.toString()
+                intent.putExtra("parametro1", valoredtTextlitros )
+                intent.putExtra("parametro2", valoredtTextdistancia)
+                intent.putExtra("parametro3", valorcombTelaResult)
+                startActivity(intent)
+            }
+            if(flexBoxOutros.isChecked) {
+                var valorcombTelaResult: Float
+                val precoOutros = edtprecoOutros.text.toString().toFloat()
+                valorcombTelaResult = precoOutros
+                //INTENT EXPLICITA
+                val intent = Intent(this, TelaResultados::class.java)
+                //PASSAGEM DOS VALORES DA SEGUNDA TELA PARA A TELARESULTADOS
+                val valoredtTextlitros = edtLitros.text.toString()
+                val valoredtTextdistancia = edtDistancia.text.toString()
+                intent.putExtra("parametro1", valoredtTextlitros )
+                intent.putExtra("parametro2", valoredtTextdistancia)
+                intent.putExtra("parametro3", valorcombTelaResult)
+                startActivity(intent)
+            }
+           /* INTENT EXPLICITA
+            val intent = Intent(this, TelaResultados::class.java)
+            //PASSAGEM DOS VALORES DA SEGUNDA TELA PARA A TELARESULTADOS
+            val valoredtTextlitros = edtLitros.text.toString()
+            val valoredtTextdistancia = edtDistancia.text.toString()
+            intent.putExtra("parametro1", valoredtTextlitros )
+            intent.putExtra("parametro2", valoredtTextdistancia)
+            //intent.putExtra("parametro3", valorcombTelaResult)
+            startActivity(intent) */
+        }
+    }
+}
+ /*
+ if(flexBoxGasolina.isChecked) {
                 if (edtDistancia.text.toString().isEmpty()) {
                     Toast.makeText(
                         this,
@@ -203,54 +335,4 @@ class SegundaTela : AppCompatActivity() {
                     }
                 }
            }
-            if(flexBoxOutros.isChecked) {
-                if (edtDistancia.text.toString().isEmpty()) {
-                    Toast.makeText(
-                        this,
-                        "Favor informar a distância percorrida!!!",
-                        Toast.LENGTH_LONG
-                    ).show()
-                    edtDistancia.requestFocus()
-                } else {
-                    val distancia: Float = edtDistancia.text.toString().toFloat()
-                    if (edtLitros.text.toString().isEmpty()) {
-                        Toast.makeText(
-                            this,
-                            "Favor informar a qtde de litros utilizados!!!",
-                            Toast.LENGTH_LONG
-                        ).show()
-                        edtLitros.requestFocus()
-                    } else {
-                        val litros: Float = edtLitros.text.toString().toFloat()
-                        val result: Float = (distancia / litros)
-                        txtConsumo.text = result.toString()
-                        msgkml.visibility = View.VISIBLE
-                    }
-                }
-
-            }
-        btnResultado.visibility = View.VISIBLE
-        }
-        val btnresultado = findViewById<Button>(R.id.btnResultado)// as Button
-        btnresultado.setOnClickListener {
-            var valorcombTelaResult: Float
-            val precoAlcool = edtprecoAlcool.text.toString().toFloat()
-            val precoGasolina = edtprecoGasolina.text.toString().toFloat()
-            if(precoAlcool > precoGasolina) {
-                valorcombTelaResult = precoAlcool
-            } else {
-                valorcombTelaResult = precoGasolina
-            }
-            //INTENT EXPLICITA
-            val intent = Intent(this, TelaResultados::class.java)
-            //PASSAGEM DOS VALORES DA SEGUNDA TELA PARA A TELARESULTADOS
-            val valoredtTextlitros = edtLitros.text.toString()
-            val valoredtTextdistancia = edtDistancia.text.toString()
-            intent.putExtra("parametro1", valoredtTextlitros )
-            intent.putExtra("parametro2", valoredtTextdistancia)
-            intent.putExtra("parametro3", valorcombTelaResult)
-            startActivity(intent)
-        }
-
-    }
-}
+  */
