@@ -1,17 +1,18 @@
 # EcoDriveApp
-Calculadora de IMC foi um aplicativo que desenvolvi para dar meus primeiros passos com desenvolvimento Android. Eu participei do desafio 10D na comunidade DevSpace e consegui sair do ZERO. 
+O EcoDriveApp é um aplicativo que você pode tanto comparar o preço entre combustíveis, no qual ele te dirá qual combustível é o adequado para o seu veículo em relação ao preço, quanto para calcular o consumo de combustível do seu veículo (km/l). Esse foi um projeto desenvolvido para a primeira hacksprint da comunidade DevSpace.
 
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
-<img src="/result/imagemlogin.png" width="260">&emsp;<img src="/result/segundatela.png" width="260">&emsp;<img src="/result/segundatela_exemplo.png" width="260">&emsp;<img src="/result/tela_resultado.png" width="260">&emsp;
+<img src="/result/imagemlogin.png" width="260">&emsp;<img src="/result/segundatela.png" width="260">&emsp;<img src="/result/segundatela_exemplo.png" width="260">&emsp;<img src="/result/segundatela_gasolina.png" width="260">&emsp;<img src="/result/segundatela_outros.png" width="260">&emsp;<img src="/result/tela_resultado.png" width="260">&emsp;
 ## Tecnologias
 * Kotlin
 * Activity para host de telas
 * ViewGroup
     * RelativeLayout
-    * LinearLayout
 - Components de UI
+    - ImageView
+    - CheckBox
     - TextView
     - EditText
     - Button
@@ -21,10 +22,10 @@ Calculadora de IMC foi um aplicativo que desenvolvi para dar meus primeiros pass
 - String resource para concatenação de textos
 
   ### TODO
-- Melhorar estilização do app
+- Melhorar estilização do app e implementar mais funções
 
 ## Author
-Ezequiel Melo Silva Lopes (follow me on [Linkedin](linkedin.com/in/ezequiel-melo-silva-lopes-0b1b37183))
+Ediberto Silva e Ezequiel Melo Silva Lopes (follow me on [Linkedin](linkedin.com/in/ezequiel-melo-silva-lopes-0b1b37183))
 
 ## License
 ```
@@ -49,7 +50,3 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
-imagemlogin.png
-segundatela.png
-segundatela_exemplo.png
-tela_resultado.png
