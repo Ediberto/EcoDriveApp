@@ -9,7 +9,7 @@ O EcoDriveApp é um aplicativo que você pode tanto comparar o preço entre comb
 * Kotlin
 * Activity para host de telas
 * ViewGroup
-    * RelativeLayout
+    * ConstraintLayout
 - Components de UI
     - ImageView
     - CheckBox
