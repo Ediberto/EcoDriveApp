@@ -14,6 +14,9 @@ class TelaResultados : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_resultados)
+
+        supportActionBar?.setHomeButtonEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 /*
         // Configurar a Toolbar
         val myToolbar = findViewById<Toolbar>(R.id.myToolbar)

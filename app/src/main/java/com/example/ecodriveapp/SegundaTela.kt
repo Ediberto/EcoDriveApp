@@ -2,6 +2,7 @@ package com.example.ecodriveapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,9 @@ class SegundaTela : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_segunda_tela)
+
+        supportActionBar?.setHomeButtonEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val edtprecoAlcool = findViewById<EditText>(R.id.etPrecoAlcool)
         val edtprecoGasolina = findViewById<EditText>(R.id.etPrecoGasolina)
@@ -268,6 +272,7 @@ class SegundaTela : AppCompatActivity() {
             }
         //btnResultado.visibility = View.VISIBLE
         //btnCalcular.visibility = View.INVISIBLE
+
         }
         val btnresultado = findViewById<Button>(R.id.btnResultado)// as Button
         btnresultado.setOnClickListener {
@@ -317,6 +322,7 @@ class SegundaTela : AppCompatActivity() {
                 intent.putExtra("parametro2", valoredtTextdistancia)
                 intent.putExtra("parametro3", valorcombTelaResult)
                 startActivity(intent)
+
             }
         }
     }
