@@ -1,5 +1,5 @@
 # EcoDriveApp
-O EcoDriveApp é um aplicativo que você pode tanto comparar o preço entre combustíveis, no qual ele te dirá qual combustível é o adequado para o seu veículo em relação ao preço, quanto para calcular o consumo de combustível do seu veículo (km/l). Esse foi um projeto desenvolvido para a primeira hacksprint da comunidade DevSpace.
+O EcoDriveApp é um aplicativo que auxilia o usuário de veículos no momento em que necessita ir ao posto de gasolina para abastecer seu veículo, este aplicativo a escolha adequada para seu veículo, comparando o preço entre combustíveis, no qual ele te dirá qual combustível é o adequado para o seu veículo em relação ao preço, quanto para calcular o consumo de combustível do seu veículo (km/l). Esse foi um projeto desenvolvido para a primeira HackSprint da Comunidade DevSpace.
 
 
 ## :camera_flash: Screenshots
