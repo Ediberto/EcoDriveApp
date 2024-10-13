@@ -25,7 +25,7 @@ O EcoDriveApp é um aplicativo que auxilia o usuário de veículos no momento em
 - Melhorar estilização do app e implementar mais funções
 
 ## Author
-Ediberto Silva e Ezequiel Melo Silva Lopes (follow me on [Linkedin](linkedin.com/in/ezequiel-melo-silva-lopes-0b1b37183))
+Ediberto Mariano da Silva (follow me on [Linkedin] (https://www.linkedin.com/in/ediberto-mariano-da-silva-238071118/))
 
 ## License
 ```
