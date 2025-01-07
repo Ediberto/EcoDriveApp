@@ -31,7 +31,7 @@ Ediberto Mariano da Silva (follow me on [Linkedin] (https://www.linkedin.com/in/
 ```
 The MIT License (MIT)
 
-Copyright (c) 2023 Ezequiel Melo Silva Lopes
+Copyright (c) 2023 Ediberto Mariano da Silva
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
